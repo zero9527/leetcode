@@ -34,7 +34,7 @@ function pupleSort(arr) {
   return arr;
 }
 
-// 快速排序1
+// 快速排序
 function quickSort(arr) {
   if (arr.length <= 1) return arr;
   const left = [];
