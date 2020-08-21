@@ -2,7 +2,9 @@
 
 部分题目来自 [JavaScript-Algorithms](https://github.com/sisterAn/JavaScript-Algorithms)
 
+
 ## 部分题目及解法
+
 ### 数组
 * [LRU 缓存机制](./Array/LRU.js)
 * [两个数组的交集](./Array/arr-sameItem.js)
@@ -19,8 +21,14 @@
 * [findIndex实现](./Array/array_findIndex.js)
 * [reduce实现](./Array/array_reduce.js)
 
+
 ### 字符串
 * [翻转字符串里的单词](./String/reverse-words.js)
-* [最长公共前缀](./String\max-common-prefix.js)
+* [最长公共前缀](./String/max-common-prefix.js)
 * [回文字符串](./String/reverse-string.js)
-* [无重复字符的最长子串](./Array/max-no-repeat.js)
+* [无重复字符的最长子串](./String/max-no-repeat.js)
+
+
+### 其他
+* [有效括号](./Algorithm/brackets.js)
+* [链表](./Algorithm/linked-list.js)
