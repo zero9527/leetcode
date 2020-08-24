@@ -38,9 +38,9 @@ const str3 = '(]';
 const str4 = '([)]';
 const str5 = '{[]}';
 const str6 = '{[(){}]}';
-console.log(validBrackets(str1));
-console.log(validBrackets(str2));
-console.log(validBrackets(str3));
-console.log(validBrackets(str4));
-console.log(validBrackets(str5));
-console.log(validBrackets(str6));
+console.log(validBrackets(str1)); // true
+console.log(validBrackets(str2)); // true
+console.log(validBrackets(str3)); // false
+console.log(validBrackets(str4)); // false
+console.log(validBrackets(str5)); // true
+console.log(validBrackets(str6)); // true

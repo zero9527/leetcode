@@ -50,8 +50,8 @@ class LinkedList {
   // 移除
   remove(item) {
     let prevNode = this.findPrev(item);
-    if (prevNode.next && prevNode.next.next) {
-      prevNode.next = prevNode.next.next;
+    if (prevNode.next) {
+      prevNode.next = prevNode.next.next ? prevNode.next.next : null;
     }
   }
 
@@ -60,7 +60,7 @@ class LinkedList {
     let cur = this.head;
     while (cur) {
       console.log('element: ', cur.element);
-      if (cur.next) console.log('next: ', cur.next.element);
+      console.log('next: ', cur.next ? cur.next.element : null);
       cur = cur.next;
     }
   }
@@ -81,7 +81,35 @@ ll.append('element-1');
 ll.append('element-2');
 ll.insert('element-1', 'element-3');
 ll.display();
+/**
+  element:  head
+  next:  element-1
+  element:  element-1
+  next:  element-3
+  element:  element-3
+  next:  element-2
+  element:  element-2
+  next:  null
+ */
 console.log('');
 
+ll.remove('element-3');
+ll.display();
+/**
+  element:  head
+  next:  element-1
+  element:  element-1
+  next:  element-2
+  element:  element-2
+  next:  null
+ */
+
+console.log('');
 ll.remove('element-2');
 ll.display();
+/**
+  element:  head
+  next:  element-1
+  element:  element-1
+  next:  null
+ */
