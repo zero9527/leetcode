@@ -20,12 +20,13 @@ class Node {
  * 5、尾部添加，找到最后一个next节点为空的，新建节点赋值给它
  */
 class LinkedList {
-  constructor(element) {
-    this.head = new Node(element);
+  constructor() {
+    this.head = null;
   }
 
   // 查找目标节点的前一个
   findPrev(element) {
+    if (this.head === null) return null;
     let prevNode = this.head;
     while (prevNode.next && prevNode.next.element !== element) {
       prevNode = prevNode.next;
@@ -35,14 +36,21 @@ class LinkedList {
 
   // 查找
   find(element) {
+    if (this.head !== null && element === this.head.element) {
+      return this.head;
+    }
     const prevNode = this.findPrev(element);
-    return prevNode.next;
+    return prevNode ? prevNode.next : null;
   }
 
   // 插入，item上一个，element新节点
   insert(item, element) {
-    let cur = this.find(item);
     const newNode = new Node(element);
+    if (this.head === null) {
+      this.head = newNode;
+      return;
+    }
+    let cur = this.find(item);
     newNode.next = cur.next;
     cur.next = newNode;
   }
@@ -50,66 +58,40 @@ class LinkedList {
   // 移除
   remove(item) {
     let prevNode = this.findPrev(item);
-    if (prevNode.next) {
+    if (prevNode && prevNode.next) {
       prevNode.next = prevNode.next.next ? prevNode.next.next : null;
-    }
-  }
-
-  // 打印
-  display() {
-    let cur = this.head;
-    while (cur) {
-      console.log('element: ', cur.element);
-      console.log('next: ', cur.next ? cur.next.element : null);
-      cur = cur.next;
     }
   }
 
   // 尾部添加
   append(element) {
     const newNode = new Node(element);
+    if (this.head === null) {
+      this.head = newNode;
+      return;
+    }
     let cur = this.head;
     while (cur.next) {
       cur = cur.next;
     }
     cur.next = newNode;
   }
+
+  // 输出一个拷贝（浅拷贝）
+  clone() {
+    return this.head;
+  }
+
+  // 输出数组形式
+  getList() {
+    let cur = this.head;
+    const list = [];
+    while (cur) {
+      list.push(cur);
+      cur = cur.next;
+    }
+    return list;
+  }
 }
 
-const ll = new LinkedList('head');
-ll.append('element-1');
-ll.append('element-2');
-ll.insert('element-1', 'element-3');
-ll.display();
-/**
-  element:  head
-  next:  element-1
-  element:  element-1
-  next:  element-3
-  element:  element-3
-  next:  element-2
-  element:  element-2
-  next:  null
- */
-console.log('');
-
-ll.remove('element-3');
-ll.display();
-/**
-  element:  head
-  next:  element-1
-  element:  element-1
-  next:  element-2
-  element:  element-2
-  next:  null
- */
-
-console.log('');
-ll.remove('element-2');
-ll.display();
-/**
-  element:  head
-  next:  element-1
-  element:  element-1
-  next:  null
- */
+module.exports = LinkedList;
