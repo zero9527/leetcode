@@ -33,6 +33,7 @@
 - [有效括号](./Algorithm/brackets.js)
 - [链表](./Algorithm/linked-list/linked-list.js)
   - [测试](./Algorithm/linked-list/test-linked-list.js)
-  <!-- - [合并两个有序链表](./Algorithm/linked-list/merge-linked-list.js) -->
+  - [合并两个有序链表](./Algorithm/linked-list/merge-linked-list.js)
 
 - [二叉搜索树](./Algorithm/tree/binarySearchTree.js)
+  - [测试](./Algorithm/tree/test.js)
