@@ -1,11 +1,8 @@
 const LinkedList = require('./linked-list');
-const { jsonConsole } = require('../../utils');
 
-const ll = new LinkedList();
-ll.append('element-1');
-ll.append('element-2');
+const ll = new LinkedList(['element-1', 'element-2']);
 
-console.log(jsonConsole(ll));
+console.log(ll.display());
 /**
 {
   "head": {
@@ -22,7 +19,7 @@ ll.insert('element-1', 'element-3');
 console.log(ll.getList().map((i) => i.element));
 // ['element-1', 'element-3', 'element-2']
 
-console.log(jsonConsole(ll));
+console.log(ll.display());
 /**
 {
   "head": {
@@ -43,7 +40,7 @@ console.log('');
 console.log(ll.getList().map((i) => i.element));
 // ['element-1', 'element-2']
 
-console.log(jsonConsole(ll));
+console.log(ll.display());
 /**
 {
   "head": {
@@ -61,7 +58,7 @@ console.log('');
 console.log(ll.getList().map((i) => i.element));
 // ['element-1']
 
-console.log(jsonConsole(ll));
+console.log(ll.display());
 /**
 {
   "head": {
